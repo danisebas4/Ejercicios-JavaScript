@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Ejercicio 11 serie</h1>
+    <p id="res">Respuesta</p>
+    <input type="number" placeholder="Ingrese el valor m" id="valm">
+    <button id="calc">Calcular</button>
+    <script>
+        var b=document.getElementById('calc')
+        b.addEventListener("click", boton1)
+        function boton1(){
+            var m=parseInt(document.getElementById('valm').value)
+            document.getElementById("res").innerHTML="Resultado para m="+m+": "+calcularSumatoriaSerie(m);
+        }
+        function calcularSumatoriaSerie(m){
+            var sumatoria=0;
+            for(var n=0; n<=m; n++){
+                sumatoria=sumatoria+((Math.pow(-1, n))*(1/((2*n)+1)));
+            }
+            return sumatoria;
+        }
+    </script>
+</body>
+
+</html>

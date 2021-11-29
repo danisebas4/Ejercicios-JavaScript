@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio12 calcular la suma de los números positivos en un vector<h1>
+    <P id="res">Respuesta<br>vector por defecto [15, -6, 0, 8, -2, 5, 4, -10, 0.5, 3]</P>
+    <input type="text" id="vector" placeholder="Ingrese los elementos separados por un espacio" value="15 -6 0 8 -2 5 4 -10 0.5 3">
+    <button id="calc">calcular</button>
+    <script>
+        var b=document.getElementById("calc")
+        b.addEventListener("click", boton);
+        function boton(){
+            var cad=document.getElementById("vector").value
+            let vec1= []
+            vec1=cad.split(" ")
+            document.getElementById("res").innerHTML="La suma de los valores positivos del vector: ["+cad+"] es:<br>"+calcularSumaPos(vec1)
+        }
+        function calcularSumaPos(vec){
+            var sumatoria=0.0;
+            var tam=vec.length
+            for(var i=0; i<tam; i++){
+                var val=parseFloat(vec[i])
+                if(val>0){
+                    sumatoria=sumatoria+val;
+                }
+            }
+            return sumatoria;
+        }
+    </script>
+</body>
+</html>

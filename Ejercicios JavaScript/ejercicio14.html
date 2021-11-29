@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UX-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input{
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Ejercicio14 ordenar vector de manera descendente<h1>
+    <P id="res">Respuesta<br>vector por defecto [15, -6, 0, 8, -2, 5, 4, -10, 0.5, 3]</P>
+    <input type="text" id="vector" placeholder="Ingrese los elementos separados por un espacio" value="15 -6 0 8 -2 5 4 -10 0.5 3">
+    <button id="calc">calcular</button>
+    <script>
+        var b=document.getElementById("calc")
+        b.addEventListener("click", boton);
+        function boton(){
+            var cad=document.getElementById("vector").value
+            let x= []
+            x=cad.split(" ")
+            let y=ordenarBurbuja(x);
+            cad=(y.toString())
+            document.getElementById("res").innerHTML=cad
+        }
+        function ordenarBurbuja(X){
+            var tam=X.length;
+            var i,j, aux;
+            for (i = 0; i < tam - 1; i++) {
+                for (j = 0; j < tam - i - 1; j++) {
+                   if (parseInt(X[j + 1]) > parseInt(X[j])) {
+                       aux = X[j + 1];
+                       X[j + 1] = X[j];
+                       X[j] = aux;
+                    }
+                }
+           }
+           return X
+		}
+
+    </script>
+</body>
+</html>
